@@ -1,0 +1,5 @@
+#!/bin/sh
+# This script is only here for backward compatibility to the 16.1.x version. This is deprecated and will be removed in a 
+# future release.
+
+. "$(dirname "${0}")"/start_container.sh "$@"

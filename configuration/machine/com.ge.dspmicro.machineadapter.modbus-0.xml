@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <modbusMachineAdapterConfig>
+            <name>Onsite monitor modbus nodes</name>
+            <description>Onsite monitor modbus nodes</description>
+            <dataNodeConfigs>
+                <channel protocol="TCP_IP" tcpIpAddress="127.0.0.1" tcpIpPort="1502">
+                    <unit id="1">
+                        <register name="Compressor-2021:CompressionRatio" dataType="SHORT" address="1" registerType="HOLDING" description="pressure ratio" />
+                        <register name="Compressor-2018:DischargePressure" dataType="SHORT" address="2" registerType="HOLDING" description="discharge pressure" />
+                        <register name="Compressor-2018:SuctionPressure" dataType="SHORT" address="3" registerType="HOLDING" description="suction pressure" />
+                        <register name="Compressor-2018:MaximumPressure" dataType="SHORT" address="4" registerType="HOLDING" description="maximum pressure" />
+                        <register name="Compressor-2018:MinimumPressure" dataType="SHORT" address="5" registerType="HOLDING" description="minimum pressure" />
+                        <register name="Compressor-2018:Velocity" dataType="SHORT" address="6" registerType="HOLDING" description="velocity" />
+                        <register name="Compressor-2018:Temperature" dataType="SHORT" address="7" registerType="HOLDING" description="temperature" />
+                    </unit>
+                </channel>
+            </dataNodeConfigs>
+            <dataSubscriptionConfigs>
+                <dataSubscriptionConfig name="ModBusSubscription"
+                    updateInterval="1" startPointUnit="MINUTES" startPointOffset="-1">
+                    <nodeName>Compressor-2021:CompressionRatio</nodeName>
+                    <nodeName>Compressor-2018:DischargePressure</nodeName>
+                    <nodeName>Compressor-2018:SuctionPressure</nodeName>
+                    <nodeName>Compressor-2018:MaximumPressure</nodeName>
+                    <nodeName>Compressor-2018:MinimumPressure</nodeName>
+                    <nodeName>Compressor-2018:Velocity</nodeName>
+                    <nodeName>Compressor-2018:Temperature</nodeName>
+                </dataSubscriptionConfig>
+            </dataSubscriptionConfigs>
+        </modbusMachineAdapterConfig>
